@@ -1,0 +1,113 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-image: url('imagems/upkk.mp4');
+  background: linear-gradient(160deg, #fff6f6, #000000);
+  background-size: 400% 400%;
+  animation: backgroundGradient 15s ease infinite;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  position: relative;
+  
+}
+
+
+@keyframes backgroundGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.background-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(#00ff88 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: moveParticles 60s linear infinite;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes moveParticles {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, -200px); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 350px;
+  background: linear-gradient(145deg, #11ff00, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 0 15px #2effa5, 0 0 35px #11ff00 inset;
+  padding: 20px;
+  border: 2px solid #2effa5;
+  animation: pulse-border 2s infinite ease-in-out;
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(0, 255, 100, 0.1) 0deg,
+    transparent 30deg,
+    rgba(0, 255, 100, 0.1) 60deg
+  );
+  border-radius: 50%;
+  animation: rotate 8s linear infinite;
+  z-index: -1;
+}
+
+.qr-area {
+  text-align: center;
+  color: #ff0000;
+  position: relative;
+  z-index: 2;
+}
+
+.qr-code {
+  width: 180px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 6px #000000);
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse-border {
+  0%, 100% {
+    box-shadow: 0 0 9999999px #ff0000, 0 0 35px #ff0000 inset;
+  }
+  50% {
+    box-shadow: 0 0 9999999px #ff0000, 0 0 45px #ff0000 inset;
+  }
+}
