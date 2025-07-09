@@ -1,0 +1,160 @@
+/* --- ESTILO BASE (DESKTOP) --- */
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+  padding: 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #00ffc3;
+}
+
+.flex-container {
+  display: flex;
+  border: 2px dashed #555;
+  padding: 20px;
+  margin-bottom: 40px;
+  background: #1e1e1e;
+  min-height: 120px;
+  flex-wrap: wrap;
+}
+
+.coluna {
+  flex-direction: column;
+  align-items: center;
+}
+
+.linha-center {
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.space-around {
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.grow > div {
+  flex-grow: 1;
+  margin: 5px;
+}
+
+.grow1 { flex: 1; }
+.grow2 { flex: 2; }
+.grow3 { flex: 3; }
+
+.align-self-exemplo {
+  align-items: flex-start;
+  height: 160px;
+  gap: 10px;
+}
+
+.self-end {
+  align-self: flex-end;
+}
+
+.self-center {
+  align-self: center;
+}
+
+/* --- BLOCOS ESTILIZADOS --- */
+.bloco {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  min-width: 80px;
+  min-height: 80px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* --- ANIMAÇÕES DE HOVER --- */
+.coluna .bloco:hover {
+  transform: translateY(-10px);
+  background-color: #00ffaa;
+}
+
+.linha-center .bloco:hover {
+  transform: rotate(10deg);
+  background-color: #ff00cc;
+}
+
+.space-around .bloco:hover {
+  transform: translateX(15px);
+  background-color: #00bcd4;
+}
+
+.grow .bloco:hover {
+  transform: scale(1.1);
+  background-color: #ff9800;
+}
+
+.align-self-exemplo .bloco:hover {
+  background-color: #9b59b6;
+}
+
+/* --- CORES --- */
+.vermelho { background-color: #e74c3c; }
+.verde    { background-color: #27ae60; }
+.azul     { background-color: #2980b9; }
+.amarelo  { background-color: #f1c40f; }
+.rosa     { background-color: #ff5fa2; }
+.roxo     { background-color: #8e44ad; }
+.ciano    { background-color: #00bcd4; }
+.laranja  { background-color: #e67e22; }
+.pink     { background-color: #ff6b81; }
+
+
+
+
+
+/* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .bloco {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+  }
+
+  .grow > div {
+    flex-grow: unset;
+    width: 90%;
+  }
+}
+
+/* Celulares e telas pequenas */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .bloco {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+}
